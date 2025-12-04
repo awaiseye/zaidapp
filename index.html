@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensing &amp; Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="eyebrow">Sensing Intelligence</p>
+      <h1>Real-time insights for the spaces that matter.</h1>
+      <p class="lede">Combine environmental sensing, device telemetry, and human feedback into a single analytics surface. Track what matters, act with confidence.</p>
+      <div class="hero__actions">
+        <button class="button button--primary">Launch dashboard</button>
+        <button class="button button--ghost">View data catalog</button>
+      </div>
+      <div class="signal-strip">
+        <div class="signal">
+          <span class="label">Air Quality</span>
+          <span class="value" id="signal-air">45 μg/m³</span>
+        </div>
+        <div class="signal">
+          <span class="label">Occupancy</span>
+          <span class="value" id="signal-occupancy">128</span>
+        </div>
+        <div class="signal">
+          <span class="label">Noise</span>
+          <span class="value" id="signal-noise">38 dB</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Analytics</p>
+          <h2>Operational snapshots</h2>
+        </div>
+        <div class="pill-group">
+          <button class="pill pill--active" data-range="24h">24h</button>
+          <button class="pill" data-range="7d">7d</button>
+          <button class="pill" data-range="30d">30d</button>
+        </div>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <p class="label">Energy usage</p>
+          <h3 id="metric-energy">0.91 MWh</h3>
+          <p class="muted">Combined usage across HVAC, lighting, and critical workloads.</p>
+          <div class="trend" id="trend-energy"></div>
+        </article>
+        <article class="card">
+          <p class="label">Comfort score</p>
+          <h3 id="metric-comfort">92%</h3>
+          <p class="muted">Thermal, acoustic, and lighting scores blended per room.</p>
+          <div class="trend" id="trend-comfort"></div>
+        </article>
+        <article class="card">
+          <p class="label">Asset uptime</p>
+          <h3 id="metric-uptime">99.4%</h3>
+          <p class="muted">Predictive maintenance keeps equipment online without surprise outages.</p>
+          <div class="trend" id="trend-uptime"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel panel--split">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Live sensing</p>
+          <h2>Real-time telemetry</h2>
+        </div>
+        <div class="legend">
+          <span class="dot dot--blue"></span> Building A
+          <span class="dot dot--green"></span> Building B
+          <span class="dot dot--orange"></span> Edge devices
+        </div>
+      </div>
+      <div class="stream">
+        <div class="stream__line" id="stream-line"></div>
+        <div class="stream__events" id="stream-events"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Programs</p>
+          <h2>Automations &amp; playbooks</h2>
+        </div>
+        <button class="button button--ghost">Create automation</button>
+      </div>
+      <div class="grid grid--2">
+        <article class="card">
+          <h3>Air quality guardrails</h3>
+          <p class="muted">Respond to volatile organic compound spikes with fresh air cycles and filter boosts.</p>
+          <ul class="list">
+            <li>Threshold: PM2.5 &gt; 55 μg/m³</li>
+            <li>Actions: Open dampers, notify ops, log in ledger</li>
+            <li>Reliability: 99.9% confirmed execution</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Occupancy-aware savings</h3>
+          <p class="muted">Tune HVAC and lighting schedules based on predicted occupancy from cameras and badges.</p>
+          <ul class="list">
+            <li>Signal blend: Cameras + badge taps + Wi‑Fi density</li>
+            <li>Energy savings: 18% over baseline</li>
+            <li>Comfort deviation: &lt; 3% per month</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
